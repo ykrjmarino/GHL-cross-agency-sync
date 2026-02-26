@@ -10,7 +10,7 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 
 //practice console log
-/*
+
 app.post('/webhook/nola', async (req, res) => {
   const contact = req.body;
   const triggered_tag = contact.customData?.triggered_tag;
@@ -22,8 +22,8 @@ app.post('/webhook/nola', async (req, res) => {
   // rest of your code...
   res.sendStatus(200); // optional if just testing
 });
-*/
 
+/*
 //this is the endpoint the webhook will call
 app.post('/webhook/nola', async (req, res) => {
   const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
@@ -190,7 +190,7 @@ app.post('/webhook/nola', async (req, res) => {
     }
   }
 });
-
+*/
 app.get("/", (req, res) => res.send("Backend is running wewewe"));
 
 app.listen(port, () => {
