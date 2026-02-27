@@ -1,0 +1,9 @@
+PORT=3001
+
+#from Suds Mgt Account (Target-Account)
+ACCESS_TOKEN=
+LOCATION_ID=
+
+#workflow 
+CUSTOM_FIELD_ID=
+CUSTOM_FIELD_KEY=contact.sync_contact_id
