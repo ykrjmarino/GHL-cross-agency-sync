@@ -61,7 +61,7 @@ app.post('/webhook/suds', async (req, res) => {
       c.customFields?.some(f => f.id === CUSTOM_FIELD_ID && f.value === source_contact_id)
     );
         
-    console.log('Existing Suds Mgt contact:', existingContact);
+    //console.log('Existing Suds Mgt contact:', existingContact);
 
     //Next: decide update or create based on existingContact
     if (existingContact) {
@@ -138,7 +138,7 @@ app.post('/webhook/suds', async (req, res) => {
         locationId: LOCATION_ID
       };
 
-      console.log('Payload to Suds Mgt (create):', JSON.stringify(createData, null, 2));
+      //console.log('Payload to Suds Mgt (create):', JSON.stringify(createData, null, 2));
 
       const createResponse = await axios.post(
         'https://services.leadconnectorhq.com/contacts',
@@ -188,6 +188,5 @@ app.post('/webhook/suds', async (req, res) => {
 app.get("/", (req, res) => res.send("Backend is running wewewe"));
 
 app.listen(port, () => {
-  // db.connect();
   console.log(`✅ Backend running at http://localhost:${port} (ykrjm2026)`);
 });
