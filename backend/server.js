@@ -9,8 +9,8 @@ const port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-//practice console log
 /*
+//practice console log
 app.post('/webhook/suds', async (req, res) => {
   const contact = req.body;
   const triggered_tag = contact.customData?.triggered_tag;
@@ -19,8 +19,7 @@ app.post('/webhook/suds', async (req, res) => {
   console.log('Triggered tag from workflow:', contact.customData?.triggered_tag);
   console.log('Source-acc contact ID from workflow:', contact.contact_id);
 
-  // rest of your code...
-  res.sendStatus(200); // optional if just testing
+  res.sendStatus(200); //optional if just testing
 });
 */
 
@@ -37,7 +36,7 @@ app.post('/webhook/suds', async (req, res) => {
   //console.log('Received full body:', contact);
   console.log('Received contact:', contact.contact_id, contact.first_name, contact.last_name);
 
-  const source_contact_id = contact.contact_id; //haba naman variable name ya
+  const source_contact_id = contact.contact_id; 
 
   try {
     //fetch all contacts from Suds Mgt (or apply allowed filters like email)
@@ -63,7 +62,7 @@ app.post('/webhook/suds', async (req, res) => {
         
     //console.log('Existing Suds Mgt contact:', existingContact);
 
-    //Next: decide update or create based on existingContact
+    //next: decide update or create based on existingContact
     if (existingContact) {
       console.log('----------');
       console.log('Contact already exists in Suds Mgt. Ready to UPDATE.');
